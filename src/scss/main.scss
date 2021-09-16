@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import "./components/table";
+
+:root {
+	/* Backgrounds And Colours */
+	--background-blue: #2b4a6b;
+	--background-red: #d81515;
+	--background-green: #2d8621;
+	--background-yellow: #f3bb3c;
+
+	/* Fonts */
+	--ff-default: Arial, Helvetica, sans-serif;
+	--ff-roboto: 'Roboto', sans-serif;
+
+	--button-radius: 3px;
+
+
+	font-size: clamp(1em, 1vw + 0.25em, 3em);
+	box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--ff-primary);
+	
+	background-color: rgb(109, 113, 128);
+
+	&.ff-lato {
+		--ff-primary: 'Lato', sans-serif;
+		--ff-secondary: 'Roboto', sans-serif;
+	}
+}
+
+p {
+	font-family: var(--ff-secondary);
+}
+
+.flash {
+	animation: flash linear 0.5s;
+}
+
+@keyframes flash {
+	from {
+		background-color: rgba(247, 165, 12, 0.829);
+	}
+
+	to {
+		background-color: white;
+	}
+}

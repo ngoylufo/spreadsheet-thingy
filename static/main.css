@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+	/* Backgrounds And Colours */
+	--background-blue: #2b4a6b;
+	--background-red: #d81515;
+	--background-green: #2d8621;
+	--background-yellow: #f3bb3c;
+
+	/* Fonts */
+	--ff-default: Arial, Helvetica, sans-serif;
+	--ff-roboto: 'Roboto', sans-serif;
+
+	--button-radius: 3px;
+
+	font-size: clamp(1em, 1vw + 0.25em, 3em);
+	box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--ff-roboto);
+}
+
+.table {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+.table thead {
+	background-color: var(--background-blue);
+	color: white;
+}
+
+.table thead th {
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table thead th:first-child {
+	border-top-left-radius: var(--button-radius);
+}
+
+.table thead th:last-child {
+	border-top-right-radius: var(--button-radius);
+}
+
+.table thead th,
+.table tbody td {
+	font-weight: normal;
+	padding: 0.5em 1em;
+	text-align: center;
+	font-size: 0.8em;
+	white-space: nowrap;
+}
+
+.table tbody tr:nth-child(odd) {
+	background-color: #e2e0e081;
+}
+
+.table .header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35em;
+}
+
+.table .header .sorting-arrows {
+	display: flex;
+}
+
+.table .header .sorting-arrows [class^='sorting-arrows']::after {
+	content: attr(data-arrow);
+}
+
+.table thead th[data-sorting-order='asc'] .sorting-arrows__up::after {
+	color: var(--background-yellow);
+}
+
+.table thead th[data-sorting-order='desc'] .sorting-arrows__down::after {
+	color: var(--background-yellow);
+}
